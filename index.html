@@ -45,13 +45,24 @@
     <div class="container">
         <header>
             <h1>聖心線上觀影站</h1>
-            <p>不要讓看不完的電影和飛速的時間成為遺憾</p>
+            <p>不要讓看不完的電影和飛逝的時間成為遺憾</p>
         </header>
 
+        <!-- 这里是新增的公告栏 -->
+        <div style="background-color: #1f2937; border-left: 4px solid #f0b429; padding: 15px; margin-bottom: 30px; border-radius: 4px;">
+            <strong>📢 公告：</strong>11月17日及20日將會舉辦線下觀影！
+        </div>
+
         <div class="video-section">
+            <!-- 这里是新增的切换按钮 -->
+            <div style="display: flex; gap: 10px; padding: 15px; background-color: #0d1117; border-bottom: 1px solid #30363d;">
+                <button onclick="changeVideo('video1')" style="flex: 1; padding: 10px; cursor: pointer; background-color: #30363d; color: white; border: none; border-radius: 5px;">🎬 电影一：测试视频</button>
+                <button onclick="changeVideo('video2')" style="flex: 1; padding: 10px; cursor: pointer; background-color: #30363d; color: white; border: none; border-radius: 5px;">🎬 电影二：备用视频</button>
+            </div>
+
             <div class="video-wrapper">
-                <!-- 把下面这一整行替换成你从 B站 复制的 <iframe> 代码 -->
-                <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1706416465&bvid=BV1UT42167xb&cid=1641702404&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                <!-- 注意：这里加了一个 id="myVideo" -->
+                <iframe id="myVideo" src="https://player.bilibili.com/player.html?bvid=你第一个B站视频的BV号" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
             </div>
         </div>
 
@@ -75,8 +86,24 @@
         </div>
 
         <footer>
-            <p>僅供聖心內部影迷使用</p>
+            <p>僅供聖心內部影迷使用，請勿外傳</p>
         </footer>
+    </div>
+
+    <!-- 新增的切换逻辑代码 -->
+    <script>
+        function changeVideo(videoId) {
+            const iframe = document.getElementById('myVideo');
+            if (videoId === 'video1') {
+                // 把下面的链接换成你第一个电影的嵌入链接
+                iframe.src = "https://player.bilibili.com/player.html?bvid=BV1fVHw6oEUp"; 
+            } else if (videoId === 'video2') {
+                // 把下面的链接换成你第二个电影的嵌入链接
+                iframe.src = "https://player.bilibili.com/player.html?bvid=BV1ap4k6rE3Q"; 
+            }
+        }
+    </script>
+</body>
     </div>
 </body>
 </html>
