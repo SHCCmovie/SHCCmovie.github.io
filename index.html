@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聖心線上觀影站</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #0d1117;
+            color: #e6edf3;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; margin-bottom: 40px; }
+        header h1 { font-size: 2rem; font-weight: 600; letter-spacing: 2px; color: #f0b429; }
+        header p { color: #8b949e; margin-top: 8px; font-size: 0.95rem; }
+        .video-section {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; }
+        .video-wrapper iframe {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; border: 0;
+        }
+        .comments-section {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 30px 25px;
+        }
+        .comments-section h2 {
+            font-size: 1.25rem; margin-bottom: 20px; padding-bottom: 12px;
+            border-bottom: 1px solid #30363d; color: #f0b429; font-weight: 500;
+        }
+        footer { text-align: center; margin-top: 40px; color: #484f58; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>聖心線上觀影站</h1>
+            <p>不要讓看不完的電影和飛速的時間成為遺憾</p>
+        </header>
+
+        <div class="video-section">
+            <div class="video-wrapper">
+                <!-- 把下面这一整行替换成你从 B站 复制的 <iframe> 代码 -->
+                BILIBILI_IFRAME_CODE
+            </div>
+        </div>
+
+        <div class="comments-section">
+            <h2>討論區</h2>
+            <!-- 把下面这一整行替换成你从 giscus.app 复制的 <script> 代码 -->
+            GISCUS_SCRIPT_CODE
+        </div>
+
+        <footer>
+            <p>僅供聖心內部影迷使用</p>
+        </footer>
+    </div>
+</body>
+</html>
