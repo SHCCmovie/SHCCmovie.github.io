@@ -90,19 +90,24 @@
         </footer>
     </div>
 
-    <!-- 新增的切换逻辑代码 -->
     <script>
         function changeVideo(videoId) {
-            const iframe = document.getElementById('myVideo');
+            const videoPlayer = document.getElementById('myVideo');
+            const videoSource = document.getElementById('videoSource');
+            
             if (videoId === 'video1') {
-                // 把下面的链接换成你第一个电影的嵌入链接
-                iframe.src = "https://player.bilibili.com/player.html?bvid=BV1fVHw6oEUp"; 
+                https://www.w3schools.com/html/mov_bbb.mp4
+                videoSource.src = "这里填第一个视频的直链"; 
             } else if (videoId === 'video2') {
-                // 把下面的链接换成你第二个电影的嵌入链接
-                iframe.src = "https://player.bilibili.com/player.html?bvid=BV1ap4k6rE3Q"; 
+                https://www.w3schools.com/html/mov_bbb.mp4
+                videoSource.src = "这里填第二个视频的直链"; 
             }
+            
+            // 切换链接后，必须让播放器重新加载一下
+            videoPlayer.load(); 
         }
     </script>
+    
 </body>
     </div>
 </body>
