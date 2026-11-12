@@ -23,9 +23,9 @@
             overflow: hidden;
             margin-bottom: 40px;
         }
-        /* 修改了这里，让 video 也能占满全屏 */
+        /* 这是确保视频占满框架的样式 */
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; }
-        .video-wrapper video, .video-wrapper iframe {
+        .video-wrapper video {
             position: absolute; top: 0; left: 0;
             width: 100%; height: 100%; border: 0;
         }
@@ -55,17 +55,17 @@
         </div>
 
         <div class="video-section">
-            <!-- 切换按钮 -->
+            <!-- 切换按钮，你可以根据你上传的视频改名，比如“电影一：沙丘” -->
             <div style="display: flex; gap: 10px; padding: 15px; background-color: #0d1117; border-bottom: 1px solid #30363d;">
-                <button onclick="changeVideo('video1')" style="flex: 1; padding: 10px; cursor: pointer; background-color: #30363d; color: white; border: none; border-radius: 5px;">🎬 电影一：测试视频</button>
-                <button onclick="changeVideo('video2')" style="flex: 1; padding: 10px; cursor: pointer; background-color: #30363d; color: white; border: none; border-radius: 5px;">🎬 电影二：备用视频</button>
+                <button onclick="changeVideo('video1')" style="flex: 1; padding: 10px; cursor: pointer; background-color: #30363d; color: white; border: none; border-radius: 5px;">🎬 电影一</button>
+                <button onclick="changeVideo('video2')" style="flex: 1; padding: 10px; cursor: pointer; background-color: #30363d; color: white; border: none; border-radius: 5px;">🎬 电影二</button>
             </div>
 
             <div class="video-wrapper">
-                <!-- 加上了 id="myVideo"，方便 JS 找到它 -->
+                <!-- 这是真正的 HTML5 视频播放器 -->
                 <video id="myVideo" controls>
-                    <!-- 默认加载第一个视频，这里我先用了一个公开的测试视频给你看效果 -->
-                    <source id="videoSource" src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <!-- 这里填第一个视频的链接 -->
+                    <source id="videoSource" src="archive.org/details/shccmovie.the.shining" type="video/mp4">
                     你的浏览器不支持视频播放。
                 </video>
             </div>
@@ -73,7 +73,7 @@
 
         <div class="comments-section">
             <h2>討論區</h2>
-            <!-- 你的 Giscus 代码，原封不动 -->
+            <!-- 你的 Giscus 代码，安全保留 -->
             <script src="https://giscus.app/client.js"
                 data-repo="SHCCmovie/SHCCmovie.github.io"
                 data-repo-id="R_kgDOVVzxlA"
@@ -96,21 +96,21 @@
         </footer>
     </div>
 
-    <!-- 视频切换逻辑，之前丢失了，现在补回来 -->
+    <!-- 切换视频的按钮逻辑 -->
     <script>
         function changeVideo(videoId) {
             const videoPlayer = document.getElementById('myVideo');
             const videoSource = document.getElementById('videoSource');
             
             if (videoId === 'video1') {
-                // 换成第一个视频的真正链接
-                videoSource.src = "https://www.w3schools.com/html/mov_bbb.mp4"; 
+                archive.org/details/shccmovie.the.shining
+                videoSource.src = "archive.org/details/shccmovie.the.shining"; 
             } else if (videoId === 'video2') {
-                // 换成第二个视频的真正链接
-                videoSource.src = "https://www.w3schools.com/html/mov_bbb.mp4"; 
+                archive.org/details/shccmovie.obsession
+                videoSource.src = "archive.org/details/shccmovie.obsession"; 
             }
             
-            // 切换链接后，让播放器重新加载
+            // 切换链接后，让播放器重新加载新视频
             videoPlayer.load(); 
         }
     </script>
